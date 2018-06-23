@@ -1,6 +1,8 @@
 FC=ifort
 CC=gcc
 
+
+
 all: bindings_seq
 	python -m run.py
 

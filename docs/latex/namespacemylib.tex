@@ -1,0 +1,71 @@
+\hypertarget{namespacemylib}{}\section{mylib Module Reference}
+\label{namespacemylib}\index{mylib@{mylib}}
+
+
+Matrix multiplication and gaussian elimination, both non-\/parallelized.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacemylib_ac17c34e6e3d726dd380e490dc4f20e23}{matmul}} (a, b, a\+\_\+rows, a\+\_\+cols, b\+\_\+rows, b\+\_\+cols, ret)
+\begin{DoxyCompactList}\small\item\em Multiplies two matrices. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacemylib_a83c3f9412da2b661a80b2ca3b8c04663}{gauss}} (a, x, n)
+\begin{DoxyCompactList}\small\item\em Performs gaussian elimination. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Matrix multiplication and gaussian elimination, both non-\/parallelized. 
+
+\begin{DoxyAuthor}{Author}
+Andrzej Sołtysik 
+\end{DoxyAuthor}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacemylib_a83c3f9412da2b661a80b2ca3b8c04663}\label{namespacemylib_a83c3f9412da2b661a80b2ca3b8c04663}} 
+\index{mylib@{mylib}!gauss@{gauss}}
+\index{gauss@{gauss}!mylib@{mylib}}
+\subsubsection{\texorpdfstring{gauss()}{gauss()}}
+{\footnotesize\ttfamily subroutine mylib\+::gauss (\begin{DoxyParamCaption}\item[{real (kind = 8), dimension(n, n), intent(inout)}]{a,  }\item[{real (kind = 8), dimension(n), intent(inout)}]{x,  }\item[{integer (kind = 8), intent(in)}]{n }\end{DoxyParamCaption})}
+
+
+
+Performs gaussian elimination. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em a} & Two-\/dimensional (n x n) matrix of coefficents \\
+\hline
+\mbox{\tt in,out}  & {\em x} & (1 x n) array of right-\/hand-\/side values \\
+\hline
+\mbox{\tt in}  & {\em n} & size of first matrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacemylib_ac17c34e6e3d726dd380e490dc4f20e23}\label{namespacemylib_ac17c34e6e3d726dd380e490dc4f20e23}} 
+\index{mylib@{mylib}!matmul@{matmul}}
+\index{matmul@{matmul}!mylib@{mylib}}
+\subsubsection{\texorpdfstring{matmul()}{matmul()}}
+{\footnotesize\ttfamily subroutine mylib\+::matmul (\begin{DoxyParamCaption}\item[{real (kind = 4), dimension(a\+\_\+rows, a\+\_\+cols)}]{a,  }\item[{real (kind = 4), dimension(b\+\_\+rows, b\+\_\+cols)}]{b,  }\item[{integer}]{a\+\_\+rows,  }\item[{integer}]{a\+\_\+cols,  }\item[{integer}]{b\+\_\+rows,  }\item[{integer}]{b\+\_\+cols,  }\item[{real (kind = 4), dimension(a\+\_\+rows, b\+\_\+cols)}]{ret }\end{DoxyParamCaption})}
+
+
+
+Multiplies two matrices. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & First matrix \\
+\hline
+\mbox{\tt in}  & {\em b} & Second matrix \\
+\hline
+\mbox{\tt in}  & {\em a\+\_\+rows} & number of rows in first matrix \\
+\hline
+\mbox{\tt in}  & {\em a\+\_\+cols} & number of columns in first matrix \\
+\hline
+\mbox{\tt in}  & {\em b\+\_\+rows} & number of rows in second matrix \\
+\hline
+\mbox{\tt in}  & {\em b\+\_\+cols} & number of columns in second matrix \\
+\hline
+\mbox{\tt out}  & {\em ret} & return matrix \\
+\hline
+\end{DoxyParams}

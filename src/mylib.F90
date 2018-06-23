@@ -1,7 +1,31 @@
+!------------------------------------------------------------------------------
+!
+! MODULE: mylib
+!
+!> @author
+!> Andrzej Sołtysik
+!
+! DESCRIPTION: 
+!> Matrix multiplication and gaussian elimination, both non-parallelized
+!
+!------------------------------------------------------------------------------
 module mylib
 implicit none
 
 contains
+
+!-----
+! DESCRIPTION:
+!> Multiplies two matrices
+!
+!> @param[in] a First matrix
+!> @param[in] b Second matrix
+!> @param[in] a_rows number of rows in first matrix
+!> @param[in] a_cols number of columns in first matrix
+!> @param[in] b_rows number of rows in second matrix
+!> @param[in] b_cols number of columns in second matrix
+!> @param[out] ret return matrix
+!-----
 subroutine matmul(a, b, a_rows, a_cols, b_rows, b_cols, ret)
     INTEGER :: a_rows, a_cols, b_rows, b_cols
     REAL (kind = 4) :: a(a_rows, a_cols)
@@ -29,6 +53,14 @@ subroutine matmul(a, b, a_rows, a_cols, b_rows, b_cols, ret)
     
 end subroutine matmul
 
+!-----
+! DESCRIPTION:
+!> Performs gaussian elimination
+!
+!> @param[inout] a Two-dimensional (n x n) matrix of coefficents
+!> @param[inout] x (1 x n) array of right-hand-side values
+!> @param[in] n size of first matrix
+!-----
 subroutine gauss(a, x, n)
     INTEGER (KIND = 8), intent(in) :: n
     REAL (KIND = 8), intent(inout) :: a(n, n), x(n)
@@ -48,8 +80,6 @@ subroutine gauss(a, x, n)
 
         enddo
     enddo
-
-    
 end subroutine gauss
 
 end module mylib
